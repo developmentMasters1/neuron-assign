@@ -1,0 +1,100 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10; /* Ensure modal stays on top */
+}
+
+.modal-container{
+  display : flex ; 
+  align-content: space-between;
+  height : 100% ;
+  width : 100% ;
+
+}
+
+
+
+
+.modal {
+  background-color: rgb(31, 32, 75);
+  padding: 20px;
+  border-radius: 8px;
+  height: 80%;
+  width: 80%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Box shadow for depth */
+  max-width: 80%;
+  align-items: center;
+  z-index: inherit;
+}
+
+.plot-container {
+
+  width: 100%;
+  height: 100%; /* Adjust height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.plot{
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Box shadow for depth */
+
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 5px;
+  gap: 0;
+  margin-left: 100px;
+  margin-right: 100px;
+  height: 100%;
+  width: 100%;
+
+}
+
+.input-container div {
+    text-align: center;
+}
+
+
+.input-container input {
+  width: 200px;
+  padding: 8px;
+  margin-right: 10px;
+  margin-top: 5px;
+  border: 1px solid #301515;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+}
+/* .input-container input {
+  margin-right: 10px;
+}
+
+.input-container input:last-child {
+  margin-right: 0;
+} */
+
+.closeButton { 
+  position : relative ;
+  bottom : 571px;
+  left : 1130px ;
+
+}
+
+
+

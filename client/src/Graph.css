@@ -1,0 +1,38 @@
+.graph-container h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust card width */
+  grid-gap: 20px;
+  
+   
+}
+
+.card {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+.card:hover {
+  background-color: #e0e0e0;
+}
+
+.plot-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px; /* Adjust plot height */
+  margin: 20px auto; /* Center plot */
+}
+
+.plot {
+  width: 100%;
+  height: 100%;
+  margin-right: 100px;
+}
