@@ -1,6 +1,7 @@
 import { useRecoilState } from "recoil";
-import { log, LogType } from "./index";
-import { Table,Space , Button} from 'antd';
+import { LogType } from "./index";
+import { log } from "./atom/atom";
+import { Table,Space , Button, ConfigProvider} from 'antd';
 import type { TableProps } from 'antd';
 
 
@@ -78,8 +79,23 @@ const handleDelete = (record : LogType) => {
 
     return (
       <div>
-       <Table dataSource={data} columns={columns} scroll={{ y: 240 }}  />
+       <Table dataSource={data} columns={columns} scroll={{ y: 240 }}  style={{margin : "10px"}} />
+       <ConfigProvider
+         theme = {
+          {
+            token:
+            {
+                 fontSize : 20,
+                 colorPrimary : "#9BCF53",
+                 colorBgContainer : "#BFEA7C",
+                
+              }
+            }
+          
+         }
+         >
         <Button onClick={handleDownload}>Download</Button>
+        </ConfigProvider>
       </div>
     );
 }

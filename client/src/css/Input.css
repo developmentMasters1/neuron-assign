@@ -17,12 +17,3 @@ h2{
     margin: 0;
 }
 
-.significantMetricContainer span {
- display : inline-block;
-  padding: 5px 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}

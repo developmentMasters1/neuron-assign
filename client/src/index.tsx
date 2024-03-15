@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import { RecoilRoot, atom } from 'recoil';
 
@@ -15,22 +14,6 @@ export interface LogType {
 
 }
 
-export const log = atom<LogType[]>({
-  key: 'log',
-  default: [] ,
-});
-
-export const  channel = atom({
-  key: 'channelId',
-  default: ''
-
-});
-
-
-export const metric = atom({
-  key: 'metric',
-  default: []
-}); 
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

@@ -2,9 +2,9 @@
 import React, { useState , useEffect} from 'react';
 import { Card } from 'antd';
 import Plot from "react-plotly.js"
-import './Graph.css';
+import  './css/Graph.css';
 import Tag from './Tag';
-import {metric, channel} from './index'; 
+import {metric, channel} from './atom/atom'; 
 import { useRecoilState } from 'recoil';
 
 export interface DataProps {
@@ -20,7 +20,7 @@ interface significantMetricProps {
 const readData = async ( channel_id :  string  , metrics  : string[] | [])=>{
   let ans  : significantMetricProps = {}; 
   for ( let metric of metrics){
-    const response = await fetch(`http://localhost:8000/data/${channel_id}?metric=${metric}`); 
+    const response = await fetch(`https://data-api-vpq8.onrender.com/data/${channel_id}?metric=${metric}`); 
     const data = await response.json();  
     const keys  = Object.keys(data.data); 
 

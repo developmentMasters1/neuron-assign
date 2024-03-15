@@ -1,6 +1,6 @@
 import  { useState, useEffect } from 'react';
-import './index.css';
-import "./App.css";
+
+import "./css/App.css";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,

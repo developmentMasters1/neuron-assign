@@ -1,9 +1,10 @@
 import React, { useState,useEffect } from 'react';  
 
 import { Button, notification } from 'antd';
-import './Tag.css'; // Import your CSS file
+import "./css/Tag.css"; // Import your CSS file
 import { useRecoilState } from 'recoil';
-import { log , LogType, channel, metric} from './index';
+import {  LogType} from './index';
+import { log, channel } from './atom/atom';
 
 import Plot from 'react-plotly.js';
 import { DataProps } from './Graph';
