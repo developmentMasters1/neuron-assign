@@ -53,9 +53,6 @@ const Input = ({ handleMenuClick }: { handleMenuClick: (arg: string) => void }) 
     <div className="container" >
       <div>
       <h2>Input Channel Id</h2>
-      </div>
-
-      <div >
         <Select
           size="large"
           placeholder="Please select"
@@ -64,6 +61,9 @@ const Input = ({ handleMenuClick }: { handleMenuClick: (arg: string) => void }) 
         />
       </div>
       <Divider />
+
+    <div  className="significantMetricContainer">
+
       <h2>Metrics with significant changes</h2>
       <ConfigProvider
          theme = {
@@ -76,19 +76,21 @@ const Input = ({ handleMenuClick }: { handleMenuClick: (arg: string) => void }) 
           
          }
          >
-      <div  className="significantMetricContainer">
+     
         {
           plainOptions.map((item, index) => {
             return <Tag  color="green" key={index}>{item}</Tag>;
           })
         }
         { channelId && plainOptions.length === 0 && <Tag color="red">No metrics available for this channel</Tag>}
-      </div>
-      </ConfigProvider>
+        </ConfigProvider>
+    </div>
+     
       
   
 
       <Divider/>
+      
       <ConfigProvider
          theme = {
           {
@@ -100,8 +102,11 @@ const Input = ({ handleMenuClick }: { handleMenuClick: (arg: string) => void }) 
           
          }
          >
+
       <Button onClick={() => handleMenuClick('2') }>Show Graphs</Button>
       </ConfigProvider>
+
+     
      
     </div>
   )

@@ -6,14 +6,14 @@ import {
   MenuUnfoldOutlined,
   
 } from '@ant-design/icons';
-import { Layout, Menu, Button, theme } from 'antd';
-// import { Footer } from 'antd/es/layout/layout';
+import { Layout, Menu, Button, theme, Typography,Flex } from 'antd';
+
 import Input from './Input';
 import Graph from './Graph';
 import Log from './Log';
 
 
-const { Header : AntHeader, Sider, Content } = Layout;
+const { Header, Sider, Content,Footer } = Layout;
 type DataRow = {
   channel_id: string;
   ec_timestamp: string;
@@ -77,36 +77,39 @@ const App: React.FC = () => {
 
 
   return (
-    <Layout style={{ minHeight: '100vh' }}>
-      <Sider trigger={null} collapsible collapsed={collapsed}>
-        <div className="demo-logo-vertical" />
+    <Layout  className="layout-container">
+      <Sider trigger={null} collapsible collapsed={collapsed} >
+        
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={[selectedPage]}
+          defaultSelectedKeys={['1']}
+          selectedKeys={[selectedPage]}
           onClick={({ key }) => handleMenuClick(key as string)}
           items={[
             {
               key: '1',
               label: 'Input',
-              style: selectedPage === '1' ? { backgroundColor: 'blue' } : {}
+              
             },
             {
               key: '2',
               label: 'Graph',
-              style: selectedPage === '2' ? { backgroundColor: 'blue' } : {}
+             
             },
             {
               key: '3',
               label : 'Log',
-              style: selectedPage === '3' ? { backgroundColor: 'blue' } : {}
+           
             },
           ]}
         />
       </Sider>
       <Layout>
-        <AntHeader style={{ padding: 0, background: colorBgContainer }}>
-        
+        <Header style={{ display : "flex", alignItems : "center" , justifyContent: "space-between", padding: 0, background: colorBgContainer }}>
+
+
+          <div>
           <Button
            type="text" 
             icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
@@ -117,23 +120,28 @@ const App: React.FC = () => {
               
             }}
           />
+          </div>
 
-          <span className='title'><h1 style={{display:"inline"}}>Neuron Assignment</h1></span>
+
+          <Typography.Title level={1}> Neuron Assignment</Typography.Title>
+          <div></div>
 
         
-        </AntHeader>
+        </Header>
         <Content
           style={{
-            margin: '24px 16px',
-            padding: 24,
+            marginTop : 24,
             minHeight: 280,
             background: colorBgContainer,
-            
+            display : "flex",
+            justifyContent : "center"
           }}
+          className='layout-content'
         >
           {renderContent()}
         </Content>
-        {/* <Footer></Footer> */}
+         <Footer className='footer'>
+          Lawda </Footer> 
       </Layout>
     </Layout>
   );

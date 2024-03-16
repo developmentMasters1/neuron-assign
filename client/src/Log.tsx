@@ -78,9 +78,12 @@ const handleDelete = (record : LogType) => {
      
 
     return (
-      <div>
+      <div style={{display : "flex" , flexDirection : "column" , justifyContent : "flex-start" , alignItems : "center"}}>
+        <div>
        <Table dataSource={data} columns={columns} scroll={{ y: 240 }}  style={{margin : "10px"}} />
-       <ConfigProvider
+        </div>
+        <div style = {{marginTop : "2em"}}>
+        <ConfigProvider
          theme = {
           {
             token:
@@ -96,6 +99,7 @@ const handleDelete = (record : LogType) => {
          >
         <Button onClick={handleDownload}>Download</Button>
         </ConfigProvider>
+        </div>
       </div>
     );
 }

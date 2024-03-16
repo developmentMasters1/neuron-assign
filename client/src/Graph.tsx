@@ -1,11 +1,13 @@
 
-import React, { useState , useEffect} from 'react';
-import { Card } from 'antd';
+import { useState , useEffect} from 'react';
 import Plot from "react-plotly.js"
 import  './css/Graph.css';
 import Tag from './Tag';
 import {metric, channel} from './atom/atom'; 
 import { useRecoilState } from 'recoil';
+import { Button } from 'antd';
+
+
 
 export interface DataProps {
   time: string[];
@@ -92,19 +94,21 @@ const Graph = () => {
 
   return (
     <div className="graph-container">
+      <div className='title-container'>
       <h1>Graphs</h1>
-      <div className="cards-container">
+      </div>
+      <div className='card-container'>
         {
           plainOptions.map((item) => (
-            <Card
+           < div 
               key={item}
-              title={item}
               className="card"
-              onClick={ ()=>{openModal(item) }}
+             
             >
-              
-
-              <div className="plot-container">
+              <div>
+             <h2>{item}</h2>
+             </div>
+            
               <Plot
                 data={[
                   {
@@ -119,12 +123,14 @@ const Graph = () => {
                   title: 'Bandwidth vs Time',
                 }}
                 className='plot'
+               
               />
+          
+            <div style = {{ marginTop : "1em"}}>
+            <Button  onClick={ ()=>{openModal(item) }} >Add Tags</Button>
             </div>
-
-            <p>Click to add tags</p>
              
-            </Card>
+          </div>
           ))  
         }
       </div>

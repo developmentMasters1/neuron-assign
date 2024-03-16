@@ -1,5 +1,21 @@
-.title {
-    font : 3em  ;
-    color: #1f1c1c;
-}
+/* App.css */
 
+body, html {
+    overflow: hidden;
+  }
+
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .layout-content {
+    flex: 1; /* Fill remaining space */
+    overflow-y: auto; /* Allow content to be scrollable */
+  }
+  
+  .footer {
+    flex-shrink: 0; /* Prevent footer from shrinking */
+  }
+  
