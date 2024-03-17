@@ -24,16 +24,20 @@ const getChannel = async () => {
 const Input = ({ handleMenuClick }: { handleMenuClick: (arg: string) => void }) => {
 
   const [channelId, setChannelId] = useRecoilState(channel);
-  const [options, setOptions] = useState<{ label: string, value: string }[]>([]);
+  const [options, setOptions] = useState<{ value: string, label: string }[]>();
   const [plainOptions, setPlainOptions] = useRecoilState(metric);
 
   const handleChange = async (value: string) => {
     setChannelId(value);
-
+    
+  
     const response = await fetch(`https://data-api-vpq8.onrender.com/metrics?channel_id=${value}`);
     const data = await response.json();
 
+    const val = data.data.map((item: any) => {});
     setPlainOptions(data.data);
+    console.log(options)
+
   };
 
   useEffect(() => {
@@ -51,16 +55,15 @@ const Input = ({ handleMenuClick }: { handleMenuClick: (arg: string) => void }) 
 
   return (
     <div className="container" >
-      <div>
-      <h2>Input Channel Id</h2>
-        <Select
-          size="large"
-          placeholder="Please select"
-          onChange={handleChange}
-          options={options}
-        />
+      <div className="select">
+        <h2>Select Channel</h2>
+          <Select
+            size="large"
+            style={{ width: "10rem"}}
+            onChange={handleChange}
+            options={options}
+          />
       </div>
-      <Divider />
 
     <div  className="significantMetricContainer">
 
@@ -79,7 +82,7 @@ const Input = ({ handleMenuClick }: { handleMenuClick: (arg: string) => void }) 
      
         {
           plainOptions.map((item, index) => {
-            return <Tag  color="green" key={index}>{item}</Tag>;
+            return <Tag  color="green" style={{margin: "3px"}} key={index}>{item}</Tag>;
           })
         }
         { channelId && plainOptions.length === 0 && <Tag color="red">No metrics available for this channel</Tag>}
@@ -89,7 +92,6 @@ const Input = ({ handleMenuClick }: { handleMenuClick: (arg: string) => void }) 
       
   
 
-      <Divider/>
       
       <ConfigProvider
          theme = {

@@ -4,14 +4,24 @@
     align-items: center;
     justify-content: space-evenly;
     height: 80vh;
+    padding: 20px;
    
 
 }
 
-.container div {
+.select {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+}
+
+.significantMetricContainer{
+   
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    
 }
 

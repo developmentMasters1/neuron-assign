@@ -111,38 +111,37 @@ interface TagProps {
     return (
       <div className="modal-background">
         <div className="modal">
-          <div className='modal-container'>
-            <div className='plot-container'>
-            <Plot
-            data={[
+         <div className='modal-container'>
+             <Plot
+             data={[
               {
                 x: timemetricData?.time,
                 y:timemetricData?.value,
                 mode: 'lines',
                 marker: { color: 'blue' },
                 name: 'Bandwidth vs Time',
-              },
-            ]}
-            layout={{
+                },
+                ]}
+              layout={{
               title: 'Bandwidth vs Time',
               xaxis: { showspikes: true, spikemode: "toaxis" }
-            }}
+               }}
            
-            onClick={handlePlotClick}
-             />
-             </div>
+               onClick={handlePlotClick}
+               />
+            
   
              <div className="input-container">
               <div>
-               <h2>Time Stamp</h2>
+               <h3>Time Stamp</h3>
               <input  disabled defaultValue={timestamp}  />
               </div>
               <div>
-              <h2>Value</h2>
+              <h3>Value</h3>
               <input  disabled defaultValue={metric === -1 ? "" : metric} />
               </div>
               <div>
-              <h2>Enter Tag</h2>
+              <h3>Enter Tag</h3>
               <input  placeholder="Enter your tag" value={tag} onChange={handleChange} />
               </div>
               <Button type="primary" onClick={handleLogSave}>Submit</Button>
@@ -150,8 +149,9 @@ interface TagProps {
           </div>
 
         
-         
-          <Button onClick={handleClick} className='closeButton'><CloseOutlined /></Button>
+          <div className='closeButton'>
+          <Button onClick={handleClick} ><CloseOutlined /></Button>
+          </div>
         </div>
         
        

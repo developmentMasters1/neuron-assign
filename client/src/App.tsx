@@ -6,11 +6,12 @@ import {
   MenuUnfoldOutlined,
   
 } from '@ant-design/icons';
-import { Layout, Menu, Button, theme, Typography,Flex } from 'antd';
+import { Layout, Menu, Button, theme, Typography,Flex, ConfigProvider } from 'antd';
 
 import Input from './Input';
 import Graph from './Graph';
 import Log from './Log';
+import { ALL } from 'dns';
 
 
 const { Header, Sider, Content,Footer } = Layout;
@@ -35,21 +36,6 @@ const App: React.FC = () => {
   const [selectedPage, setSelectedPage] = useState<string>('1'); 
   const [data, setData] = useState<Values | undefined>();
 
-  // useEffect(() => {
-  //   const getCSV = () => {
-  //     Papa.parse("/file.csv", {
-  //       header: true,
-  //       download: true,
-  //       skipEmptyLines: true,
-  //       delimiter: ",",
-  //       complete: (results: ParseResult<DataRow>) => {
-  //         setData(results)
-  //       },
-  //     })
-  //   }
-
-  //   console.log(data); ;
-  // }, []); // Run once on component mount
 
   const handleMenuClick = async (page: string) => {   
      setSelectedPage(page);
@@ -77,8 +63,11 @@ const App: React.FC = () => {
 
 
   return (
+    
     <Layout  className="layout-container">
-      <Sider trigger={null} collapsible collapsed={collapsed} >
+     
+   
+      <Sider trigger={null} collapsible collapsed={collapsed} style={{backgroundImage: "linear-gradient(to right, #0f0c29, #302b63, #24243e)"}}  >
         
         <Menu
           theme="dark"
@@ -86,6 +75,12 @@ const App: React.FC = () => {
           defaultSelectedKeys={['1']}
           selectedKeys={[selectedPage]}
           onClick={({ key }) => handleMenuClick(key as string)}
+          style={{
+         
+            backgroundImage: "linear-gradient(to right, #0f0c29, #302b63, #24243e)"
+   
+
+          }}
           items={[
             {
               key: '1',
@@ -105,8 +100,9 @@ const App: React.FC = () => {
           ]}
         />
       </Sider>
+    
       <Layout>
-        <Header style={{ display : "flex", alignItems : "center" , justifyContent: "space-between", padding: 0, background: colorBgContainer }}>
+        <Header style={{ display : "flex", alignItems : "center" , justifyContent: "space-between", padding: 0, backgroundImage: "linear-gradient(to right, #0f0c29, #302b63, #24243e)"}}>
 
 
           <div>
@@ -117,22 +113,23 @@ const App: React.FC = () => {
             style={{
               fontSize: '16px',
               width: 64,
+              color: 'white',
               
             }}
           />
           </div>
 
 
-          <Typography.Title level={1}> Neuron Assignment</Typography.Title>
+          <Typography.Title level={1} style={{color : "white" , fontFamily : 'fantasy'}}> Visualization and Labeling of Shipped Data</Typography.Title>
           <div></div>
 
         
         </Header>
         <Content
           style={{
-            marginTop : 24,
+
             minHeight: 280,
-            background: colorBgContainer,
+            background: "linear-gradient(45deg, rgba(252,251,253,1) 0%,rgba(247,246,250,1) 37%,rgba(239,238,244,1) 100%)",
             display : "flex",
             justifyContent : "center"
           }}
@@ -140,10 +137,13 @@ const App: React.FC = () => {
         >
           {renderContent()}
         </Content>
-         <Footer className='footer'>
-          Lawda </Footer> 
+         <Footer className='footer' style={{ backgroundImage: "linear-gradient(to right, #0f0c29, #302b63, #24243e)"}}>
+         &#169; Nitish Singh </Footer> 
+        
       </Layout>
+     
     </Layout>
+   
   );
 };
 

@@ -2,6 +2,11 @@
 
 body, html {
     overflow: hidden;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+          
+    background: radial-gradient(ellipse at center, rgb(237,234,207) 0%,rgb(226,222,180) 100%)
+    
   }
 
 .layout-container {
@@ -16,6 +21,10 @@ body, html {
   }
   
   .footer {
-    flex-shrink: 0; /* Prevent footer from shrinking */
+    display:  flex;
+    flex-shrink: 0;
+    justify-content: center;
+    color : white
+    
   }
   

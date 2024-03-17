@@ -13,25 +13,22 @@
 
 .modal-container{
   display : flex ; 
-  align-content: space-between;
+  justify-content: space-evenly;
   height : 100% ;
   width : 100% ;
+ 
 
 }
 
-.input-container h2{
-  font-size: 2em;
-  color: #351818;
-  text-align: center;
-  margin: 0;
 
-}
+
 
 
 
 
 .modal {
-  background-color: rgb(41, 42, 97);
+  position: relative;
+   background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
   padding: 20px;
   border-radius: 8px;
   height: 80%;
@@ -42,15 +39,7 @@
   z-index: inherit;
 }
 
-.plot-container {
 
-  width: 100%;
-  height: 100%; /* Adjust height as needed */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 50px;
-}
 
 .plot{
   width: 100%;
@@ -65,13 +54,8 @@
 .input-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  margin-top: 5px;
-  gap: 0;
-  margin-left: 100px;
-  margin-right: 100px;
-  height: 100%;
-  width: 100%;
+  justify-content: space-around;
+ 
 
 }
 
@@ -89,6 +73,10 @@
   border-radius: 4px;
   background-color: #f0f0f0;
 }
+ .input-container h3{
+   color : white ; 
+  
+ }
 /* .input-container input {
   margin-right: 10px;
 }
@@ -98,9 +86,10 @@
 } */
 
 .closeButton { 
-  position : relative ;
-  bottom : 571px;
-  left : 1130px ;
+  position : absolute ;
+  top : 0 ;
+  right :  0 ;
+  margin : 0.5em ;
 
 }
 
